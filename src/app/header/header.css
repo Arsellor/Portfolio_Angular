@@ -15,6 +15,39 @@
     z-index: 1000;
 }
 
+/* Conteneur flex pour logo + menu */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Section logo et prénom */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Pour un effet cercle, enlevez si vous préférez garder le format original */
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.prenom {
+    font-family: 'Playfair Display', "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -26,7 +59,7 @@ ul {
 
 /* Style des liens (Texte) */
 a {
-    font-family: 'Playfair Display', "Times New Roman", serif; /* Style Serif pour le luxe */
+    font-family: 'Playfair Display', "Times New Roman", serif; /* Style Serif pour le luxe */ 
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -47,14 +80,14 @@ a::before {
     z-index: -1;
     width: 0; /* Départ caché */
     height: 100%;
-    background-color: var(--text-color); /* On utilise le bleu pétrole pour le contraste */
+    background-color: var(--text-color); /* On utilise le bleu pétrole pour le contraste */   
     transform: skewX(-15deg); /* L'inclinaison dynamique que vous aimiez */
     transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 a:hover {
     color: var(--bg-color); /* Le texte devient crème sur le bloc sombre */
-    text-decoration: none; /* On enlève le soulignement classique pour l'effet bloc */
+    text-decoration: none; /* On enlève le soulignement classique pour l'effet bloc */        
 }
 
 a:hover::before {
@@ -67,11 +100,29 @@ a:hover::before {
         padding: 10px 20px;
     }
     
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo-section {
+        gap: 10px;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .prenom {
+        font-size: 1.2rem;
+    }
+
     ul {
         justify-content: center; /* Centré sur mobile */
         gap: 15px;
     }
-    
+
     a {
         font-size: 0.8rem;
         letter-spacing: 1px;
